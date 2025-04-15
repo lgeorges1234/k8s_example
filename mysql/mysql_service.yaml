@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  namespace: eval
+  labels:
+    app: mysql
+spec:
+  type: ClusterIP
+  clusterIP: 10.43.0.42
+  selector:
+    app: mysql
+  ports:
+    - protocol: TCP
+      port: 3307
+      targetPort: 3306
