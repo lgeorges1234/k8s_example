@@ -30,7 +30,7 @@ spec:
             - secretRef:
                 name: mysql-user
           volumeMounts:
-            - name: mysql_data
+            - name: mysql-data
               mountPath: /var/lib/mysql
   volumeClaimTemplates:
     - metadata:
