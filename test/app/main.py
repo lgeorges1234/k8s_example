@@ -7,11 +7,12 @@ import os
 
 app = FastAPI()
 
-mysql_user = ""
-mysql_password = ""
-mysql_host = ""
-mysql_port = ""
-mysql_database = ""
+# Get MySQL connection parameters from environment variables
+mysql_user = os.environ.get("MYSQL_USER", "evaluser")
+mysql_password = os.environ.get("MYSQL_PASSWORD", "evalmysql@..")
+mysql_host = os.environ.get("MYSQL_HOST", "mysql.eval.svc.cluster.local")
+mysql_port = os.environ.get("MYSQL_PORT", "3307")
+mysql_database = os.environ.get("MYSQL_DATABASE", "datasc")
 
 print(os.environ)
 
