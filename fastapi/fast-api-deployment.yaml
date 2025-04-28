@@ -31,22 +31,14 @@ spec:
           valueFrom:
             secretKeyRef:
               name: mysql-user
-              key: MARIADB_USER
+              key: MYSQL_USER
         - name: MYSQL_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mysql-user
-              key: MARIADB_PASSWORD
+              key: MYSQL_PASSWORD
         - name: MYSQL_DATABASE  
           valueFrom:
             secretKeyRef:
               name: mysql-user
-              key: MARIADB_DATABASE
-        volumeMounts:
-        - name: fastapi-volume
-          mountPath: /app
-      volumes:
-      - name: fastapi-volume
-        hostPath:
-          path: /eval/fastapi
-          type: Directory
+              key: MYSQL_DATABASE

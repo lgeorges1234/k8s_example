@@ -14,6 +14,13 @@ spec:
       labels:
         app: mysql
     spec:
+      initContainers:
+        - name: init-mysql
+          image: busybox
+          command: ['sh', '-c', 'rm -rf /var/lib/mysql/* && echo "Directory prepared for MySQL initialization"']
+          volumeMounts:
+          - name: mysql-data
+            mountPath: /var/lib/mysql
       containers:
         - name: mysql
           image: docker.io/mysql:8.4
