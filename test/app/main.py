@@ -22,7 +22,7 @@ print(f"Original password: {mysql_password}")
 print(f"Encoded password: {encoded_password}")
 
 # Build the connection string with URL-encoded password
-conn_string = f"mysql+mysqlclient://{mysql_user}:{encoded_password}@{mysql_host}:{mysql_port}/{mysql_database}"
+conn_string = f"mysql://{mysql_user}:{encoded_password}@{mysql_host}:{mysql_port}/{mysql_database}"
 
 print(f"Connection string (masked): {conn_string.replace(encoded_password, '********')}")
 
